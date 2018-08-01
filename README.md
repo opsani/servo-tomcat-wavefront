@@ -1,8 +1,15 @@
 # Optune Servo with Tomcat (adjust) and Wavefront (measure) drivers
 
-## Build servo container
+## Build servo container and push to docker registry
 ```
-docker build . -t example.com/servo-tomcat-wavefront
+make container push
+```
+
+This will build an image named `opsani/servo-tomcat-wavefront` and push it to Docker Hub.
+If you want to build the container under a different name and/or push to private registry:
+```
+IMG_NAME=my-registry.com/opsani/servo-tomcat-wavefront make container push
+
 ```
 
 ## Running servo as a Docker container installed from EC2 userdata
